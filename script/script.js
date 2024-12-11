@@ -1,21 +1,16 @@
-// script.js
-
-// Start Game
 function startGame() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("ready").style.display = "block";
 }
 
-// Go to Clue 1 after confirmation
 function startClue() {
   document.getElementById("ready").style.display = "none";
   document.getElementById("clue1").style.display = "block";
 }
 
-// Check Answer for Clue #1
 function checkAnswer1() {
   const answer = document.getElementById("answer1").value.toLowerCase();
-  if (answer === "class") { // Correct answer for clue
+  if (answer === "class") {
     document.getElementById("response1").innerText = "Correct! Moving to the next step...";
     setTimeout(() => {
       document.getElementById("clue1").style.display = "none";
@@ -26,13 +21,11 @@ function checkAnswer1() {
   }
 }
 
-// Check Answer for MCQ (puzzle section)
 function checkAnswer(answer) {
-  if (answer === 'D') { // Correct answer is D (All of the Above)
-    document.getElementById("puzzle-response").innerText = "Correct! Moving to the balloon game!";
+  if (answer === 'D') {
+    document.getElementById("puzzle-response").innerText = "Correct! Moving to the final treasure!";
     setTimeout(() => {
       document.getElementById("puzzle").style.display = "none";
-      document.getElementById("game").style.display = "block";
       startBalloonGame();
     }, 2000);
   } else {
@@ -40,42 +33,23 @@ function checkAnswer(answer) {
   }
 }
 
-// Start Balloon Game
 function startBalloonGame() {
+  document.getElementById("game").style.display = "block";
   const balloonContainer = document.getElementById("balloon-container");
-  const gameStatus = document.getElementById("game-status");
   balloonContainer.innerHTML = "";
-  gameStatus.innerText = "Pop all the balloons!";
-
-  // Create balloons
-  const balloonCount = 10;
-  let poppedCount = 0;
-
-  for (let i = 0; i < balloonCount; i++) {
+  for (let i = 0; i < 10; i++) {
     const balloon = document.createElement("div");
-    balloon.classList.add("balloon");
-    balloon.style.backgroundColor = getRandomColor();
-    balloon.addEventListener("click", () => {
-      balloon.remove();
-      poppedCount++;
-      if (poppedCount === balloonCount) {
-        gameStatus.innerText = "Congratulations! All balloons popped!";
-        setTimeout(() => {
-          document.getElementById("game").style.display = "none";
-          document.getElementById("final").style.display = "block";
-        }, 2000);
-      }
-    });
+    balloon.className = "balloon";
+    balloon.addEventListener("click", () => popBalloon(balloon));
     balloonContainer.appendChild(balloon);
   }
 }
 
-// Get random color for balloons
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+function popBalloon(balloon) {
+  balloon.style.visibility = "hidden";
+  const remaining = document.querySelectorAll(".balloon:not([style*='visibility'])").length;
+  if (remaining === 0) {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("final").style.display = "block";
   }
-  return color;
 }
