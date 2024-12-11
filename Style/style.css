@@ -30,10 +30,12 @@ button {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+  text-shadow: 2px 2px #000;
 }
 
 button:hover {
   background-color: #ff4d4d;
+  transform: scale(1.1);
 }
 
 .clue, .puzzle-section, .game-section, .final-message, .ready-section {
@@ -51,11 +53,13 @@ button:hover {
 .balloon {
   width: 50px;
   height: 80px;
-  background-color: #ffcc00;
+  background-color: #ff0000;
+  border: 3px solid #ffffff;
   border-radius: 50%;
   position: relative;
   cursor: pointer;
   animation: float 5s infinite;
+  box-shadow: 4px 4px #333333;
 }
 
 .balloon:after {
@@ -69,6 +73,11 @@ button:hover {
   transform: translateX(-50%);
 }
 
+.balloon:hover {
+  background-color: #ffcc00;
+  animation: none;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -79,4 +88,28 @@ button:hover {
   100% {
     transform: translateY(0);
   }
+}
+
+h1, h2, p {
+  text-shadow: 2px 2px #000;
+}
+
+.image-row img {
+  border: 3px solid #fff;
+  box-shadow: 4px 4px #333333;
+}
+
+.mcq-option {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #fff;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  text-shadow: 2px 2px #000;
+}
+
+.mcq-option:hover {
+  background-color: #333;
 }
