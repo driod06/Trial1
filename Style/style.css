@@ -7,7 +7,7 @@ body {
   text-align: center;
   background-color: #000;
   overflow: hidden;
-  height: 400vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ body {
 
 /* Headers */
 h1, h2 {
-  margin-top: 70px;
+  margin-top: 20px;
   text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff;
   font-size: 48px;
   font-family: 'Press Start 2P', cursive;
@@ -175,9 +175,12 @@ h1, h2, p {
 @media (max-width: 768px) {
   /* ...other media query styles... */
 
-  /* Center text vertically */
+  /* Center text vertically and horizontally */
   body {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
   }
 }
