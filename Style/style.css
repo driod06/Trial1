@@ -1,47 +1,78 @@
+/* General Reset */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
   color: #ffffff;
   text-align: center;
   background-color: #000;
   overflow: hidden;
+  height: 100vh; /* Ensure the body covers the full viewport height */
+  background-image: linear-gradient(45deg, #ff00ff, #00ffff); /* 90s neon gradient background */
+  background-size: 400% 400%; /* Add animation for the gradient effect */
+  animation: gradientAnimation 10s ease infinite;
 }
 
+/* Full-screen background video */
 .video-background {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  width: 100%;  /* Ensure the video spans the entire width of the screen */
+  height: 100%; /* Ensure the video spans the entire height of the screen */
+  object-fit: cover; /* Crop and scale to cover the screen */
+  z-index: -1; /* Keep the video behind other content */
 }
 
+/* Gradient animation for the 90s neon effect */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Headers */
 h1, h2 {
   margin-top: 20px;
+  text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff; /* Glowing neon text */
+  font-size: 48px;
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+  color: #ffffff;
 }
 
+/* Button Styling */
 button {
-  background-color: #ff6666;
+  background-color: #ff66cc; /* Neon pink */
   color: white;
-  border: none;
+  border: 2px solid #ffffff;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
   text-shadow: 2px 2px #000;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 0 0 20px 10px rgba(255, 102, 204, 0.7); /* Glow effect */
+  transition: transform 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #ff4d4d;
+  background-color: #ff00ff;
   transform: scale(1.1);
+  box-shadow: 0 0 30px 15px rgba(255, 0, 255, 0.7); /* Glowing effect on hover */
 }
 
+/* Hide sections by default */
 .clue, .puzzle-section, .game-section, .final-message, .ready-section {
   display: none;
 }
 
+/* Balloon container styling */
 #balloon-container {
   display: flex;
   flex-wrap: wrap;
@@ -50,32 +81,35 @@ button:hover {
   margin: 20px;
 }
 
+/* Retro 90s Balloon Styling */
 .balloon {
-  width: 50px;
-  height: 80px;
-  background-color: #ff0000;
-  border: 3px solid #ffffff;
+  width: 70px;
+  height: 100px;
+  background-color: #ff00ff; /* Neon pink */
+  border: 5px solid #ffffff;
   border-radius: 50%;
   position: relative;
   cursor: pointer;
-  animation: float 5s infinite;
-  box-shadow: 4px 4px #333333;
+  animation: float 5s ease-in-out infinite;
+  box-shadow: 4px 4px 10px #000, 0 0 20px #ff00ff; /* Retro glowing shadow */
+  transition: all 0.2s ease-in-out;
 }
 
 .balloon:after {
   content: '';
   position: absolute;
   width: 2px;
-  height: 40px;
+  height: 60px;
   background: #fff;
   left: 50%;
-  bottom: -40px;
+  bottom: -60px;
   transform: translateX(-50%);
 }
 
 .balloon:hover {
-  background-color: #ffcc00;
+  background-color: #00ffff; /* Neon cyan on hover */
   animation: none;
+  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Glowing hover effect */
 }
 
 @keyframes float {
@@ -83,33 +117,93 @@ button:hover {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-25px);
   }
   100% {
     transform: translateY(0);
   }
 }
 
+/* Pixelated text styling */
 h1, h2, p {
-  text-shadow: 2px 2px #000;
+  text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff; /* Glowing neon text */
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+  color: #ffffff;
 }
 
+/* Image Styling */
 .image-row img {
-  border: 3px solid #fff;
-  box-shadow: 4px 4px #333333;
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px 10px #000;
 }
 
+/* MCQ options */
 .mcq-option {
   margin: 10px;
   padding: 10px;
-  border: 2px solid #fff;
+  border: 2px solid #ffffff;
   background: #000;
-  color: #fff;
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
   text-shadow: 2px 2px #000;
+  transition: all 0.2s ease;
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
 }
 
 .mcq-option:hover {
   background-color: #333;
+  transform: scale(1.1);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  /* Ensure the video still fills the screen on smaller screens */
+  .video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain cropping on mobile */
+  }
+
+  /* Adjust button size for smaller screens */
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Adjust the size of the balloons */
+  .balloon {
+    width: 50px;
+    height: 80px;
+  }
+
+  /* Make the text size smaller on smaller screens */
+  h1, h2 {
+    font-size: 36px;
+  }
+
+  /* Adjust margins for smaller screens */
+  #balloon-container {
+    margin: 10px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For even smaller devices like phones */
+  h1, h2 {
+    font-size: 24px;
+  }
+
+  /* Further adjust button size */
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  /* Adjust balloon size for tiny screens */
+  .balloon {
+    width: 40px;
+    height: 60px;
+  }
 }
