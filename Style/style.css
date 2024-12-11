@@ -2,14 +2,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
-  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
   text-align: center;
   background-color: #000;
   overflow: hidden;
-  height: 100vh; /* Ensure the body covers the full viewport height */
-  background-image: linear-gradient(45deg, #ff00ff, #00ffff); /* 90s neon gradient background */
-  background-size: 400% 400%; /* Add animation for the gradient effect */
+  height: 100vh;
+  background-image: linear-gradient(45deg, #ff00ff, #00ffff);
+  background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
 }
 
@@ -18,10 +18,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;  /* Ensure the video spans the entire width of the screen */
-  height: 100%; /* Ensure the video spans the entire height of the screen */
-  object-fit: cover; /* Crop and scale to cover the screen */
-  z-index: -1; /* Keep the video behind other content */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* Gradient animation for the 90s neon effect */
@@ -40,31 +40,31 @@ body {
 /* Headers */
 h1, h2 {
   margin-top: 20px;
-  text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff; /* Glowing neon text */
+  text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff;
   font-size: 48px;
-  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
-  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
 }
 
 /* Button Styling */
 button {
-  background-color: #ff66cc; /* Neon pink */
+  background-color: #ff66cc;
   color: white;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 8px;
   text-shadow: 2px 2px #000;
   font-family: 'Press Start 2P', cursive;
-  box-shadow: 0 0 20px 10px rgba(255, 102, 204, 0.7); /* Glow effect */
+  box-shadow: 0 0 20px 10px rgba(255, 102, 204, 0.7);
   transition: transform 0.2s ease-in-out;
 }
 
 button:hover {
   background-color: #ff00ff;
   transform: scale(1.1);
-  box-shadow: 0 0 30px 15px rgba(255, 0, 255, 0.7); /* Glowing effect on hover */
+  box-shadow: 0 0 30px 15px rgba(255, 0, 255, 0.7);
 }
 
 /* Hide sections by default */
@@ -85,15 +85,15 @@ button:hover {
 .balloon {
   width: 80px;
   height: 120px;
-  background-color: #ff00ff; /* Neon pink */
-  border-radius: 50%; /* Make the balloon rounder */
+  background-color: #ff00ff;
+  border-radius: 50%;
   position: relative;
   cursor: pointer;
   animation: float 4s ease-in-out infinite;
-  box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.7); /* Retro glowing shadow */
-  border: 4px solid #ffffff; /* White border for a 90s look */
+  box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.7);
+  border: 4px solid #fff;
   transition: all 0.2s ease-in-out;
-  background-image: linear-gradient(45deg, #ff00ff, #00ffff); /* Neon gradient */
+  background-image: radial-gradient(circle at top, #ff00ff, #00ffff);
   background-size: 200% 200%;
   background-position: center;
 }
@@ -103,17 +103,17 @@ button:hover {
   position: absolute;
   width: 4px;
   height: 70px;
-  background: #fff; /* White string */
+  background: #fff;
   left: 50%;
   bottom: -70px;
   transform: translateX(-50%);
 }
 
 .balloon:hover {
-  background-color: #00ffff; /* Neon cyan on hover */
+  background-color: #00ffff;
   animation: none;
-  box-shadow: 0 0 25px 10px rgba(0, 255, 255, 0.7); /* Glowing hover effect */
-  transform: scale(1.1); /* Slight scale effect on hover */
+  box-shadow: 0 0 25px 10px rgba(0, 255, 255, 0.7);
+  transform: scale(1.1);
 }
 
 /* Animation for floating effect */
@@ -137,14 +137,14 @@ button:hover {
 
 /* Pixelated text styling */
 h1, h2, p {
-  text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff; /* Glowing neon text */
-  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
-  color: #ffffff;
+  text-shadow: 3px 3px 0 #000, 0 0 25px #ff00ff, 0 0 5px #ff00ff;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
 }
 
 /* Image Styling */
 .image-row img {
-  border: 3px solid #ffffff;
+  border: 3px solid #fff;
   box-shadow: 4px 4px 10px #000;
 }
 
@@ -152,14 +152,14 @@ h1, h2, p {
 .mcq-option {
   margin: 10px;
   padding: 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   background: #000;
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   cursor: pointer;
   text-shadow: 2px 2px #000;
   transition: all 0.2s ease;
-  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+  font-family: 'Press Start 2P', cursive;
 }
 
 .mcq-option:hover {
@@ -169,31 +169,26 @@ h1, h2, p {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  /* Ensure the video still fills the screen on smaller screens */
   .video-background {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintain cropping on mobile */
+    object-fit: cover;
   }
 
-  /* Adjust button size for smaller screens */
   button {
     padding: 8px 16px;
     font-size: 14px;
   }
 
-  /* Adjust the size of the balloons */
   .balloon {
     width: 60px;
     height: 90px;
   }
 
-  /* Make the text size smaller on smaller screens */
   h1, h2 {
     font-size: 36px;
   }
 
-  /* Adjust margins for smaller screens */
   #balloon-container {
     margin: 10px;
     gap: 10px;
@@ -201,18 +196,15 @@ h1, h2, p {
 }
 
 @media (max-width: 480px) {
-  /* For even smaller devices like phones */
   h1, h2 {
     font-size: 24px;
   }
 
-  /* Further adjust button size */
   button {
     padding: 6px 12px;
     font-size: 12px;
   }
 
-  /* Adjust balloon size for tiny screens */
   .balloon {
     width: 50px;
     height: 75px;
